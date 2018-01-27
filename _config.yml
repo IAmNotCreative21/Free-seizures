@@ -1,1 +1,11 @@
-theme: jekyll-theme-cayman
+# basic options
+title: Free Seizures
+author: IAmNotCreative21
+email: exoplasm1@gmail.com
+description: Free Seizures!
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
