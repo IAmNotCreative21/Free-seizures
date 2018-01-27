@@ -1,2 +1,3 @@
-# Free-seizures
+# Free-Seizures
 Welcome to Free Seizures!
+This site is owned by IAmNotCreative_21 on Youtube... Go Subscribe...
