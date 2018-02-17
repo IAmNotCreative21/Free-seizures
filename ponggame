@@ -1,173 +1,62 @@
 <html>
 <head>
-	<style>
-	html,body {
-		padding: 0;
-		margin: 0;
-	}
-	#left-paddle {
-		background-color: green;
-		left: 10px;
-	}
-	#right-paddle {
-		background-color: blue;
-		right: 10px;
-	}
-	.paddle {
-		top: 0;
-		height: 200px;
-		width: 10px;
-		position: absolute;
-	}
-	.ball {
-		width: 20px;
-		height: 20px;
-		background-color: red;
-		border-radius: 10px;
-		position: absolute;
-		left: 50px;
-		top: 50px;
-	}
-	.score {
-		position: absolute;
-		top: 0;
-	}
-	#left-score {
-		left: 10%;
-	}
-	#right-score {
-		right: 10%;
-	}
-	</style>
+	<title>Pong in HTML5! | Daverix.net</title>
+	<meta name="description" content="The classic Pong game made with the HTML5 elements canvas and audio!" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	<link rel="stylesheet" href="style.css" />
+	<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
 </head>
 <body>
-	ezpzxd
 
-	<div class="paddle" id="left-paddle"></div>
-	<div class="paddle" id="right-paddle"></div>
-	<div class="ball" id="ball"></div>
+<div id="gamediv">
+	<div id="titleScreen">
+		<h1>Pong!</h1>
+		<p>This game is based on the HTML5 elements <b>canvas</b> and <b>audio</b>. With some simple javascript to make it work.</p>
+		<p>To play this game you need a modern web browser with support for HTML5. Audio only works with Firefox 3.5+ at the moment.</p>
+		<p class="vcard">Made by <a href="http://daverix.net/" class="url fn" target="_top" rel="me">David Laurell</a></p>
+		<button id="playButton">Play!</button>
+	</div>
+	<div id="playScreen">
+		<canvas width="640" height="360" id="gameCanvas">
+			<p>Your browser <b>does not</b> support HTML5!</p>
+			<p>Download <a href="http://firefox.com">Firefox3.6</a> for the full experience or another with good HTML5 support. The game is tested in Firefox 3.0+, Chromium 4+, Chrome 4 beta, Opera and Internet Explorer 8. To get the audio to work you are required to use Firefox for the moment.</p>
+			<p>Visit the <a href="http://daverix.net/projects/pong/">project page</a> for more info.</p>
+		</canvas>
+		<div id="computerScore">0</div>
+		<div id="playerScore">0</div>
+		<div class="ingamebuttons">
+			<button id="pauseButton">Pause</button>
+			<button id="soundButton">Turn off sound</button>
+		</div>
+		<div id="pauseText">Paused</div>
+	</div>
+</div>
 
-	<h1 class="score" id="left-score">0</h1>
-	<h1 class="score" id="right-score">0</h1>
+<audio id="bounceLeft" autobuffer>
+	<source src="ping.wav" type="audio/x-wav" />
+	<source src="ping.ogg" type="audio/ogg" />
+</audio>
+<audio id="bounceRight" autobuffer>
+	<source src="pong.wav" type="audio/x-wav" />
+	<source src="pong.ogg" type="audio/ogg" />
+</audio>
+<audio id="bounceWall" autobuffer>
+	<source src="bom.wav" type="audio/x-wav" />
+	<source src="bom.ogg" type="audio/ogg" />
+</audio>
 
-	<script>
-	'use strict';
-	var paddleLeft = document.getElementById('left-paddle');
-	var paddleRight = document.getElementById('right-paddle');
-	var ball = document.getElementById('ball');
-	var paddleLeftTop = 0;
-	var paddleRightTop = 0;
-	var paddleLeftHeight = 200;
-	var paddleRightHeight = 200;
-	var paddleRightDirection = 0;
-	var paddleRightTimer;
-	var paddleLeftDirection = 0;
-	var paddleLeftTimer;
-	paddleLeft.style.top = 0;
-	paddleRight.style.top = 0;
-	var ballXPos = 50;
-	var ballYPos = 50;
-	var ballXDir = 5;
-	var ballYDir = 5;
-	var ballWidth = 20;
-	var ballHeight = 20;
-	var leftScoreDisplay = document.getElementById('left-score');
-	var rightScoreDisplay = document.getElementById('right-score');
-	var leftScore = 0;
-	var rightScore = 0;
-	function updateScoreDisplay() {
-		leftScoreDisplay.innerHTML = leftScore;
-		rightScoreDisplay.innerHTML = rightScore;
-	}
-	function moveBall() {
-		var newBallXPos = ballXPos + ballXDir;
-		var newBallYPos = ballYPos + ballYDir;
-		if (newBallXPos + ballWidth > window.innerWidth) {
-			ballXDir = -Math.abs(ballXDir);
-		}
-		if (newBallYPos + ballHeight > window.innerHeight) {
-			ballYDir = -Math.abs(ballYDir);
-		}
-		if (newBallXPos < 0) {
-			ballXDir = Math.abs(ballXDir);
-		}
-		if (newBallYPos < 0) {
-			ballYDir = Math.abs(ballYDir);
-		}
-		ballXPos += ballXDir;
-		ballYPos += ballYDir;
-		if (ballXPos < 20 && 
-			(ballYPos + 20 < paddleLeftTop || 
-			 ballYPos > paddleLeftTop + paddleLeftHeight)) {
-			rightScore += 1;
-			updateScoreDisplay();
-		}
-		if (ballXPos + 20 > window.innerWidth - 20 && 
-			(ballYPos + 20 < paddleRightTop || 
-			 ballYPos > paddleRightTop + paddleRightHeight)) {
-			leftScore += 1;
-			updateScoreDisplay();
-		}
-		ball.style.top = ballYPos + 'px';
-		ball.style.left = ballXPos + 'px';
-	}
-	function moveRightPaddle() {
-		paddleRightTop += paddleRightDirection;
-		paddleRight.style.top = paddleRightTop + 'px';
-	}
-	function moveLeftPaddle() {
-		paddleLeftTop += paddleLeftDirection;
-		paddleLeft.style.top = paddleLeftTop + 'px';
-	}
-	setInterval(moveBall, 25);
-	setInterval(function() {
-		if (ballXDir < 50) ballXDir *= 1.1;
-		if (ballYDir < 50) ballYDir *= 1.1;
-	}, 10000)
-	document.addEventListener('keydown', function(evt) {
-		switch (evt.code) {
-			case 'ArrowDown':
-				if (!paddleRightTimer) {
-					paddleRightDirection = 10;
-					paddleRightTimer = setInterval(moveRightPaddle, 100);
-				}
-				break;
-			case 'ArrowUp':
-				if (!paddleRightTimer) {
-					paddleRightDirection = -10;
-					paddleRightTimer = setInterval(moveRightPaddle, 100);
-				}
-				break;
-			case 'KeyS':
-				if (!paddleLeftTimer) {
-					paddleLeftDirection = 10;
-					paddleLeftTimer = setInterval(moveLeftPaddle, 100);
-				}
-				break;
-			case 'KeyW':
-				if (!paddleLeftTimer) {
-					paddleLeftDirection = -10;
-					paddleLeftTimer = setInterval(moveLeftPaddle, 100);
-				}
-				break;
-		}
-		console.log(evt);
-	})
-	document.addEventListener('keyup', function(evt) {
-		switch (evt.code) {
-			case 'ArrowDown':
-			case 'ArrowUp':
-				clearInterval(paddleRightTimer);
-				paddleRightTimer = null;
-				break;
-			case 'KeyS':
-			case 'KeyW':
-				clearInterval(paddleLeftTimer);
-				paddleLeftTimer = null;
-				break;
-		}
-		console.log(evt);
-	})
-	</script>
+<script type="text/javascript" src="game.js"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-8667386-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
 </body>
 </html>
