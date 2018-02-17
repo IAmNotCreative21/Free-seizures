@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Free Seizures!</title>
+<link rel="icon" href="https://i.imgur.com/QhceIj0.png">
+</head>
+<style>
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}    
+p {
+    text-align: center;
+}
+@import "compass/css3";
+.flash {
+    animation-name: flash;
+    animation-duration: 0.05s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: red;}
+    to {color: blue;}
+}
+</style>
+<body>
+<body style="background-color:powderblue;">
+<h1 style="font-size:100px">Welcome To Free Seizures!</h1>
+<p style="font-size:20px">Hello! This is Free Seizures, the name says it all</p>
+<p style="font-size:20px">You can subscribe to me on Youtube At IAmNotCreative21</p> 
+<p>Website Views;</p>
+<div align=center><a href='https://www.counter12.com'><img src='https://www.counter12.com/img-ZC98A2b7ab7zaC42-9.gif' border='0' alt='contador gratuito de visitas'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=ZC98A2b7ab7zaC42'></script></div>    
+<h2 class="flash" b style="font-size:80px">FREE SEIZURES FOR ALL!</h2>
+<p style="text-align:left; font-size:60px">           Games </p>
+<p style="text-align:left; font-size:30px"><a href="ponggame" target="_self">Pong</a>(currently broken)</p>    
+<p style="font-size:80px">Now For Some Crabdancing!</p>    
+<iframe style="display: block; margin: auto;" src="https://player.vimeo.com/video/10381210" width="640" height="320" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p>© 2018 IAmNotCreative21 Industries XD oof lol</p>
+<p><a href="about" target="_self">About</a></p>
+</body>
+</html>
