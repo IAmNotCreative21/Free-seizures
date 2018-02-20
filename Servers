@@ -1,1 +1,20 @@
-
+<html>
+<head>
+<style>
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+</style>
+</head>  
+<body> 
+<body style="background-color:pink;">    
+<h1 style="font-size:60px">This is Free Seizures!</h1>
+<p style="font-size:30px">Minecraft Servers: [Unmodded]: freesz.mine.bz</p>
+<p style="font-size:30px">Terraria Server: [Modded*]: freesz.mine.bz</p>
+<p style="font-size:20px">*Mods include[For Terraria]: Calamity, Thorium, Spirit, Dual Wield,</p>
+<p style="font-size:20px"><a href="index" target="_self">Back</a></p>
+</body>
+<html>  
