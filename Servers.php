@@ -4,10 +4,7 @@ foreach(array('Server', 'Stats', 'StatsException') as $file) {
 	include sprintf('../MCServerStatus/Minecraft/%s.php', $file);
 }
 $servers = array(
-	"s.nerd.nu",
-	"p.nerd.nu",
-	"hardcore.hcsmp.com",
-	"theverge.game.nfoservers.com:25565",
+	"freesz.mine.bz:25565",
 );
 ?><!DOCTYPE html>
 <html lang="en">
