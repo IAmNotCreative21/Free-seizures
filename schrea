@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Sean Co.</title>
+<title>Sean Co. - About</title>
 <link rel="icon" href="SeanCo.png">
 </head>
 <style>
@@ -45,6 +45,7 @@ p {
     text-align: center;
   color: white;
 }
+
 body {
 background-image: url("bloackchain.png"); background-color: #cccccc;
 background-repeat:no-repeat;
