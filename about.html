@@ -4,6 +4,35 @@
 <link rel="icon" href="SeanCo.png">
 </head>
 <style>
+<head>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+.navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.main {
+  padding: 16px;
+  margin-bottom: 30px;
+}
 h1 {
     text-align: center;
   color: white;
@@ -16,21 +45,22 @@ p {
     text-align: center;
   color: white;
 }
+
 body {
 background-image: url("bloackchain.png"); background-color: #cccccc;
 background-repeat:no-repeat;
 background-size: cover
 }
+  </head>
 </style>
    
  
 <body>
-
-<h1 style="font-size:80px"><strong><font face="raleway">About Sean Co.</strong></h1>
- 
-
+<div class="navbar">
+  <a href="index" target="_self">Home</a>
+  <a href="about" target="_self">About</a>
+</div>
+<h1 style="font-size:100px"><strong><font face="raleway">About Sean Co.</strong></h1>
 <p><strong>© SeanCo. 2019</strong></p>
-<p><a href="about" target="_self">About</a><a href="index" target="_self"> Home</a></p>
-
 </body>
 </html>
