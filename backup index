@@ -29,7 +29,7 @@ p {
 }
 </style>
 <body>
-<body style="background-color:powderblue;">
+<body background="bloackchain.png">
 background-image:url(https://github.com/IAmNotCreative21/FreeSeizures/blob/master/bloackchain.png?raw=true);
 <h1 style="font-size:100px">Welcome To Free Seizures!</h1>
 <p style="font-size:20px">Hello! This is Free Seizures, the name says it all</p>
