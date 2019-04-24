@@ -1,9 +1,10 @@
 <html>
 <head>
 <title>Sean Co. - About</title>
-<link rel="icon" href="SeanCo.png">
+<link rel="icon" href="https://raw.githubusercontent.com/IAmNotCreative21/SeanCo/master/SeanCo.PNG">
 </head>
 <style>
+.youcantsee p{color:rgba(255, 0, 0, 0.001);}
 <head>
 .navbar {
   overflow: hidden;
@@ -45,7 +46,19 @@ p {
     text-align: center;
   color: white;
 }
-
+@import "compass/css3";
+.flash {
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+@keyframes flash {
+    from {color: orange;}
+    to {color: blue;}
+}
 body {
 background-image: url("bloackchain.png"); background-color: #cccccc;
 background-repeat:no-repeat;
@@ -61,7 +74,12 @@ background-size: cover
   <a href="about" target="_self">About</a>
   <a href="nav" target="_self">Resources</a>
 </div>
-<h1 style="font-size:70px"><strong><font face="raleway">About Sean Co.</strong></h1>
+<div class='youcantsee'>
+<p>
+© SeanCo. Stop Trying To Copy Me
+</p>
+</div>
+<h1 style="font-size:70px"><strong><font face="Trebuchet MS">About Sean Co.</strong></h1>
 <p><strong>© SeanCo. 2019</strong></p>
 </body>
 </html>
