@@ -1,4 +1,20 @@
-<div id="particles-background" class="vertical-centered-box"></div>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>yes Loading Screen</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="particles-background" class="vertical-centered-box"></div>
 <div id="particles-foreground" class="vertical-centered-box"></div>
 
 <div class="vertical-centered-box">
@@ -12,3 +28,5 @@
     </svg>
   </div>
 </div>
+  
+  
