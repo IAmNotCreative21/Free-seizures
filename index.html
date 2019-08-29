@@ -42,7 +42,27 @@
 font: 40px Trebuchet MS;
 }
 .youcantsee p{color:rgba(255, 0, 0, 0.001);}
-
+#float {
+    position: relative;
+    -webkit-animation: floatBubble 20s infinite  normal ease-out;
+    animation: floatBubble 20s infinite  normal ease-out;
+}
+@-webkit-keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    100% {
+        top: 100px;
+    }
+}
+@keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    100% {
+        top: 100px;
+    }
+}
 .image {
     position: absolute;
     top: 50%;
@@ -147,7 +167,9 @@ p {
     to {color: blue;}
 }
 body {
+ <div id="float">
 background-image: url("images/bloackchain.png"); background-color: #cccccc;
+ </div>
 }
 
 </style>
