@@ -46,19 +46,26 @@ font: 40px Trebuchet MS;
     position: relative;
     -webkit-animation: floatBubble 20s infinite  normal ease-out;
     animation: floatBubble 20s infinite  normal ease-out;
+ width: 100px;
+  height: 100px;
+  background-color: #0CB1C4;
+  animation-name: spin;
+  animation-duration: 4200ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
 }
 @-webkit-keyframes floatBubble {
     0% {
         top:1000px;
     }
- spin {
+    
     from {
         transform:rotate(0deg);
     }
     to {
         transform:rotate(360deg);
     }
-}
+
     100% {
         top: 1000px;
     }
