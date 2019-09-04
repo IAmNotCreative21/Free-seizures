@@ -43,9 +43,7 @@ font: 40px Trebuchet MS;
 }
 .youcantsee p{color:rgba(255, 0, 0, 0.001);}
 #float {
-    position: relative;
-    -webkit-animation: floatBubble 20s infinite  normal ease-out;
-    animation: floatBubble 20s infinite  normal ease-out;
+
  width: 100px;
   height: 100px;
   background-color: #0CB1C4;
@@ -54,6 +52,11 @@ font: 40px Trebuchet MS;
   animation-iteration-count: infinite;
   animation-timing-function: linear; 
 }
+ #float2 {
+     position: relative;
+    -webkit-animation: floatBubble2 20s infinite  normal ease-out;
+    animation: floatBubble2 20s infinite  normal ease-out;
+ }
 @-webkit-keyframes floatBubble {
     0% {
         top:1000px;
@@ -70,18 +73,22 @@ font: 40px Trebuchet MS;
         top: 1000px;
     }
 }
-@keyframes floatBubble {
+ @-webkit-keyframes floatBubble2 {
+    0% {
+        top:1000px;
+    }
+    
+   
+
+    100% {
+        top: 1000px;
+    }
+}
+@keyframes floatBubble2 {
     0% {
         top:500px;
     }
- spin {
-    from {
-        transform:rotate(0deg);
-    }
-    to {
-        transform:rotate(360deg);
-    }
-}
+ 
     100% {
         top: 100px;
     }
@@ -237,6 +244,11 @@ background-image: url("images/bloackchain.png"); background-color: #cccccc;
      </div>
  <p>
   <div id="float">
+   <img src = images/bloackchain.png>
+   </div>
+ </p>
+ <p>
+  <div id="float2">
    <img src = images/bloackchain.png>
    </div>
  </p>
